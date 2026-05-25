@@ -1,223 +1,59 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* =========================================
-   BODY
-========================================= */
-
-body{
-  width:100%;
-  min-height:100vh;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  overflow:hidden;
-
-  font-family:'Montserrat',sans-serif;
-
-  background-color:#f56a73;
-
-  position:relative;
-
-  /* MAIN GEOMETRIC PATTERN */
-  background-image:
-
-  /* THICK VERTICAL BARS */
-  repeating-linear-gradient(
-    90deg,
-    rgba(255,73,84,0.95) 0px,
-    rgba(255,73,84,0.95) 6px,
-    transparent 6px,
-    transparent 48px
-  ),
-
-  /* LARGE RECTANGLE SHAPES */
-  repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 120px,
-    rgba(255,73,84,0.9) 120px,
-    rgba(255,73,84,0.9) 160px,
-    transparent 160px,
-    transparent 220px
-  ),
-
-  /* HORIZONTAL BLOCKS */
-  repeating-linear-gradient(
-    180deg,
-    transparent 0px,
-    transparent 220px,
-    rgba(255,255,255,0.12) 220px,
-    rgba(255,255,255,0.12) 280px
-  );
+body {
+    background-color: #f64c4c;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
 }
 
-/* =========================================
-   EXTRA DETAIL LAYER
-========================================= */
-
-body::before{
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-
-  /* THIN LINES */
-  repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 18px,
-    rgba(255,120,130,0.45) 18px,
-    rgba(255,120,130,0.45) 22px
-  ),
-
-  /* BOX CUTS */
-  repeating-linear-gradient(
-    180deg,
-    transparent 0px,
-    transparent 140px,
-    rgba(255,255,255,0.08) 140px,
-    rgba(255,255,255,0.08) 190px
-  );
-
-  pointer-events:none;
+.image-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* =========================================
-   RANDOM VERTICAL CUTS
-========================================= */
+.landing-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 
-body::after{
-  content:"";
 
-  position:absolute;
-  inset:0;
-
-  background:
-  repeating-linear-gradient(
-    90deg,
-    transparent 0px,
-    transparent 260px,
-    rgba(255,255,255,0.13) 260px,
-    rgba(255,255,255,0.13) 320px,
-    transparent 320px,
-    transparent 450px
-  );
-
-  pointer-events:none;
+    -webkit-mask-image: radial-gradient(
+        ellipse at center, 
+        black 20%, 
+        rgba(0, 0, 0, 0.8) 50%, 
+        rgba(0, 0, 0, 0) 80%
+    );
+    mask-image: radial-gradient(
+        ellipse at center, 
+        black 20%, 
+        rgba(0, 0, 0, 0.8) 50%, 
+        rgba(0, 0, 0, 0) 80%
+    );
 }
+.landing-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 
-/* =========================================
-   MAIN WRAPPER
-========================================= */
+    -webkit-mask-image: 
+        linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: 
+        linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%),
+        linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    
 
-.wrapper{
-  position:relative;
-  z-index:5;
-
-  width:100%;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-
-  gap:70px;
-
-  padding:40px 20px;
-}
-
-/* =========================================
-   TOP BAR
-========================================= */
-
-.top-bar{
-  background:#ff4a56;
-
-  padding:20px 60px;
-
-  border-radius:22px;
-
-  color:white;
-
-  font-size:3rem;
-  font-weight:700;
-
-  letter-spacing:18px;
-
-  text-transform:uppercase;
-}
-
-/* =========================================
-   LOGO
-========================================= */
-
-.logo{
-  width:420px;
-  max-width:90%;
-}
-
-.logo img{
-  width:100%;
-  display:block;
-  object-fit:contain;
-}
-
-/* =========================================
-   BOTTOM BAR
-========================================= */
-
-.bottom-bar{
-  background:#ff4a56;
-
-  padding:22px 50px;
-
-  border-radius:22px;
-
-  color:white;
-
-  font-size:2.1rem;
-  font-weight:300;
-
-  letter-spacing:16px;
-
-  text-transform:uppercase;
-
-  text-align:center;
-}
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-
-@media(max-width:768px){
-
-  .wrapper{
-    gap:50px;
-  }
-
-  .top-bar{
-    font-size:1.5rem;
-    letter-spacing:10px;
-    padding:18px 30px;
-  }
-
-  .bottom-bar{
-    font-size:1rem;
-    letter-spacing:6px;
-    line-height:1.8;
-    padding:18px 22px;
-  }
-
-  .logo{
-    width:260px;
-  }
-
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
 }
