@@ -123,12 +123,12 @@ body{
 @media(max-width:480px){
 
   .logo-video-container video{
-    width:95vw;
+    width:120vw;
   }
 
   #comingSoon{
 
-    font-size:2rem;
+    font-size:3rem;
 
     letter-spacing:5px;
 
