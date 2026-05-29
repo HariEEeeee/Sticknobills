@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf2e2">
+  <title>Coming Soon</title>
+
+  <link rel="stylesheet" href="index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="image-container">
-        <img src="COMING SOON.png" alt="Coming Soon - Stick No Bills" class="landing-image">
-    </div>
+  <!-- VIDEO -->
+  <div class="logo-video-container" id="videoContainer">
+
+    <video id="logoVideo" autoplay muted playsinline preload="auto">
+      <source src="SNB LOGO ANIMATION.mp4" type="video/mp4">
+    </video>
+
+  </div>
+
+  <!-- TEXT -->
+  <h1 id="comingSoon">COMING SOON</h1>
+
+  <script>
+
+    const video = document.getElementById("logoVideo");
+    const text = document.getElementById("comingSoon");
+    const container = document.getElementById("videoContainer");
+
+    video.onended = () => {
+
+      container.classList.add("fade-out");
+
+      setTimeout(() => {
+        text.classList.add("show-text");
+      }, 1000);
+
+    };
+
+  </script>
 
 </body>
 </html>
